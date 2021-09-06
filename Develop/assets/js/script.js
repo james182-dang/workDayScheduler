@@ -6,52 +6,78 @@ setInterval(function () {
 
 //save tasks to task blocks
 function saveNine() {
-    localStorage.setItem("nineAm", $('#nineAm').value);
+    localStorage.setItem("nineAm", $('#nineAm').val());
 };
 
 function saveTen() {
-    localStorage.setItem("tenAm", $('#tenAm').value);
+    localStorage.setItem("tenAm", $('#tenAm').val());
 };
 
 function saveEleven() {
-    localStorage.setItem("elevenAm", $('#elevenAm').value);
+    localStorage.setItem("elevenAm", $('#elevenAm').val());
 };
 
 function saveTwelve() {
-    localStorage.setItem("twelvePm", $('#twelvePm').value);
+    localStorage.setItem("twelvePm", $('#twelvePm').val());
 };
 
 function saveOne() {
-    localStorage.setItem("onePm", $('#onePm').value);
+    localStorage.setItem("onePm", $('#onePm').val());
 };
 
 function saveTwo() {
-    localStorage.setItem("twoPm", $('#twoPm').value);
+    localStorage.setItem("twoPm", $('#twoPm').val());
 };
 
 function saveThree() {
-    localStorage.setItem("threePm", $('#threePm').value);
+    localStorage.setItem("threePm", $('#threePm').val());
 };
 
 function saveFour() {
-    localStorage.setItem("fourPm", $('#fourPm').value);
+    localStorage.setItem("fourPm", $('#fourPm').val());
 };
 
 function saveFive() {
-    localStorage.setItem("fivePm", $('#fivePm').value);
+    localStorage.setItem("fivePm", $('#fivePm').val());
 };
 
 //function to load text into schedule blocks
 function loadTasks() {
-    localStorage.getItem("nineAm");
-    localStorage.getItem("tenAm");
-    localStorage.getItem("elevenAm");
-    localStorage.getItem("twelvePm");
-    localStorage.getItem("onePm");
-    localStorage.getItem("twoPm");
-    localStorage.getItem("threePm");
-    localStorage.getItem("fourPm");
-    localStorage.getItem("fivePm");
+    $('textarea').each(function() {
+        $('#nineAm').val(localStorage.getItem("nineAm"));
+    });
+
+    $('textarea').each(function() {
+        $('#tenAm').val(localStorage.getItem("tenAm"));
+    });
+
+    $('textarea').each(function() {
+        $('#elevenAm').val(localStorage.getItem("elevenAm"));
+    });
+
+    $('textarea').each(function() {
+        $('#twelvePm').val(localStorage.getItem("twelvePm"));
+    });
+
+    $('textarea').each(function() {
+        $('#onePm').val(localStorage.getItem("onePm"));
+    });
+
+    $('textarea').each(function() {
+        $('#twoPm').val(localStorage.getItem("twoPm"));
+    });
+
+    $('textarea').each(function () {
+        $('#threePm').val(localStorage.getItem("threePm"));
+    });
+
+    $('textarea').each(function() {
+        $('#fourPm').val(localStorage.getItem("fourPm"));
+    });
+
+    $('textarea').each(function () {
+        $('#fivePm').val(localStorage.getItem("fivePm"));
+    });
 };
 
 // timeblock color coding
@@ -66,3 +92,19 @@ if (moment().isBefore(time)) {
 } else {
     $(".hour").addClass("past");
 };
+
+// save button functionality
+
+$('#btn9').on("click", saveNine);
+$('#btn10').on("click", saveTen);
+$('#btn11').on("click", saveEleven);
+$('#btn12').on("click", saveTwelve);
+$('#btn1').on("click", saveOne);
+$('#btn2').on("click", saveTwo);
+$('#btn3').on("click", saveThree);
+$('#btn4').on("click", saveFour);
+$('#btn5').on("click", saveFive);
+
+
+// load tasks when page opens
+loadTasks();
