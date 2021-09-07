@@ -14,11 +14,11 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -32,51 +32,55 @@
     <main class="row-12 d-flex flex-row">
       <div class="container">
         <!-- Timeblocks go here -->
+        <div class="row"></div>
         <!-- timeblocks start -->
-          <div id="0" class="row time-block">
+          <div class="col-sm boxes">
             <h4 class="mr-2">9am</h4>
             <textarea id="nineAm" class="hour"></textarea>
-            <button class="saveBtn" id="btn9">Save</button>
+            <button class="saveBtn" id="btn9"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="1" class="row time-block">
+          <div class="col-sm boxes">
             <h4>10am</h4>
             <textarea id="tenAm" class="hour"></textarea>
-            <button class="saveBtn" id="btn10">Save</button>
+            <button class="saveBtn" id="btn10"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="2" class="row time-block">
+          <div class="col-sm boxes">
             <h4>11am</h4>
             <textarea id="elevenAm" class="hour"></textarea>
-            <button class="saveBtn" id="btn11">Save</button>
+            <button class="saveBtn" id="btn11"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="3" class="row time-block">
+          <div class="col-sm boxes">
             <h4>12pm</h4>
             <textarea id="twelvePm" class="hour"></textarea>
-            <button class="saveBtn" id="btn12">Save</button>
+            <button class="saveBtn" id="btn12"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="4" class="row time-block">
+          <div class="col-sm boxes">
             <h4>1pm</h4>
             <textarea id="onePm" class="hour"></textarea>
-            <button class="saveBtn" id="btn1">Save</button>
+            <button class="saveBtn" id="btn1"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="5" class="row time-block">
+          <div class="col-sm boxes">
             <h4>2pm</h4>
             <textarea id="twoPm" class="hour"></textarea>
-            <button class="saveBtn" id="btn2">Save</button>
+            <button class="saveBtn" id="btn2"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="6" class="row time-block">
+          <div class="col-sm boxes">
             <h4>3pm</h4>
             <textarea id="threePm" class="hour"></textarea>
-            <button class="saveBtn" id="btn3">Save</button>
+            <button class="saveBtn" id="btn3"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="7" class="row time-block">
+          <div class="col-sm boxes">
             <h4>4pm</h4>
             <textarea id="fourPm" class="hour"></textarea>
-            <button class="saveBtn" id="btn4">Save</button>
+            <button class="saveBtn" id="btn4"><span class="oi oi-browser"></span>Save</button>
           </div>
-          <div id="8" class="row time-block">
+          <div class="col-sm boxes">
             <h4>5pm</h4>
             <textarea id="fivePm" class="hour"></textarea>
-            <button class="saveBtn" id="btn5">Save</button>
+            <button class="saveBtn" id="btn5"><span class="oi oi-browser"></span>Save</button>
+          </div>
+          <div class="big-button">
+            <button class="saveBtn bigButton" id="bigBtn"><span class="oi oi-browser"></span>Save All</button>
           </div>
         </div>
       </div>
