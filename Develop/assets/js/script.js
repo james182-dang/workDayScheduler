@@ -41,6 +41,18 @@ function saveFive() {
     localStorage.setItem("fivePm", $('#fivePm').val());
 };
 
+function saveAll() {
+    saveNine();
+    saveTen();
+    saveEleven();
+    saveTwelve();
+    saveOne();
+    saveTwo();
+    saveThree();
+    saveFour();
+    saveFive();
+};
+
 //function to load text into schedule blocks
 function loadTasks() {
     $('textarea').each(function() {
@@ -104,6 +116,7 @@ $('#btn2').on("click", saveTwo);
 $('#btn3').on("click", saveThree);
 $('#btn4').on("click", saveFour);
 $('#btn5').on("click", saveFive);
+$('#bigBtn').on("click", saveAll);
 
 
 // load tasks when page opens
