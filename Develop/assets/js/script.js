@@ -1,10 +1,11 @@
 // add clock to header
 setInterval(function () {
     let rightNow = moment().format("MMMM Do, YYYY - hh:mm:ss a");
-    $('#currentDay').html("The current time and date is " + rightNow);
+    $('#currentDay').html("The current date and time is " + rightNow);
 }, 1000);
 
-//save tasks to task blocks
+//functions to save tasks to local storage
+
 function saveNine() {
     localStorage.setItem("nineAm", $('#nineAm').val());
 };
@@ -41,6 +42,7 @@ function saveFive() {
     localStorage.setItem("fivePm", $('#fivePm').val());
 };
 
+// function to save all tasks entered to local storage
 function saveAll() {
     saveNine();
     saveTen();
@@ -53,59 +55,42 @@ function saveAll() {
     saveFive();
 };
 
-//function to load text into schedule blocks
+//function to load text into textareas
 function loadTasks() {
     $('textarea').each(function() {
         $('#nineAm').val(localStorage.getItem("nineAm"));
-    });
-
-    $('textarea').each(function() {
         $('#tenAm').val(localStorage.getItem("tenAm"));
-    });
-
-    $('textarea').each(function() {
         $('#elevenAm').val(localStorage.getItem("elevenAm"));
-    });
-
-    $('textarea').each(function() {
         $('#twelvePm').val(localStorage.getItem("twelvePm"));
-    });
-
-    $('textarea').each(function() {
         $('#onePm').val(localStorage.getItem("onePm"));
-    });
-
-    $('textarea').each(function() {
         $('#twoPm').val(localStorage.getItem("twoPm"));
-    });
-
-    $('textarea').each(function () {
         $('#threePm').val(localStorage.getItem("threePm"));
-    });
-
-    $('textarea').each(function() {
         $('#fourPm').val(localStorage.getItem("fourPm"));
-    });
-
-    $('textarea').each(function () {
         $('#fivePm').val(localStorage.getItem("fivePm"));
     });
 };
 
-// timeblock color coding
-let hour = $(".hour");
+// set color code when page loads
+function setColor() {
+    
+    let hour = $(".hour");
 
-let time = moment(hour, "L").set("hour", 17);
+    let time = moment(hour, "L").set("hour", 17);
 
-if (moment().isBefore(time)) {
-    $(".hour").addClass("future");
-} else if (Math.abs(moment().diff(time, "hours")) <= 1) {
-    $(".hour").addClass("present");
-} else {
-    $(".hour").addClass("past");
+    if (moment().isBefore(time)) {
+        $(".hour").addClass("future");
+    } else if (Math.abs(moment().diff(time, "hours")) <= 1) {
+        $(".hour").addClass("present");
+    } else {
+        $(".hour").addClass("past");
+    };
+
 };
 
-// save button functionality
+//timeblock color coding refreshing every 10 minutes
+setInterval(setColor, ((1000 * 60) * 10));
+
+// save button listeners
 
 $('#btn9').on("click", saveNine);
 $('#btn10').on("click", saveTen);
@@ -121,3 +106,4 @@ $('#bigBtn').on("click", saveAll);
 
 // load tasks when page opens
 loadTasks();
+setColor();
